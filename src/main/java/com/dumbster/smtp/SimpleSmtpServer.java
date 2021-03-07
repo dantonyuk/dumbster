@@ -220,6 +220,8 @@ public final class SimpleSmtpServer implements AutoCloseable {
 				break;
 			}
 
+			log.debug("> " + line);
+
 			// Create request from client input and current state
 			SmtpRequest request = SmtpRequest.createRequest(line, smtpState);
 			// Execute request and create response object
@@ -253,6 +255,7 @@ public final class SimpleSmtpServer implements AutoCloseable {
 		if (smtpResponse.getCode() > 0) {
 			int code = smtpResponse.getCode();
 			String message = smtpResponse.getMessage();
+			log.debug("< " + code + " " + message);
 			out.print(code + " " + message + "\r\n");
 			out.flush();
 		}
