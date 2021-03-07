@@ -72,6 +72,16 @@ public final class SimpleSmtpServer implements AutoCloseable {
 	}
 
 	/**
+	 * Main program entry.
+	 *
+	 * @param args command line arguments
+	 * @throws IOException when listening on the socket causes one
+	 */
+	public static void main(String[] args) throws IOException {
+		start(DEFAULT_SMTP_PORT);
+	}
+
+	/**
 	 * private constructor because factory method {@link #start(int)} better indicates that
 	 * the created server is already running
 	 * @param serverSocket socket to listen on

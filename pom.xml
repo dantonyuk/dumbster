@@ -74,7 +74,9 @@
 				<version>3.0.2</version>
 				<configuration>
 					<archive>
-						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+						<manifest>
+							<mainClass>com.dumbster.smtp.SimpleSmtpServer</mainClass>
+						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
